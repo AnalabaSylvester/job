@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+
+import 'package:jobhub/constants/app_constants.dart';
+import 'package:jobhub/views/common/app_style.dart';
+import 'package:jobhub/views/common/reusable_text.dart';
+
+class HeadingWidget extends StatelessWidget {
+  const HeadingWidget({
+    Key? key,
+    required this.text,
+    this.onTap,
+  }) : super(key: key);
+
+  final String text;
+  final void Function()? onTap;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        ReusableText(
+          text: text,
+          style: appstyle(20, Color(kDark.value), FontWeight.w600),
+        ),
+        GestureDetector(
+            onTap: onTap,
+            child: ReusableText(
+              text: "View all",
+              style: appstyle(18, Colors.pink, FontWeight.w500),
+            )),
+      ],
+    );
+  }
+}
