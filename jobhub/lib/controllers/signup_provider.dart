@@ -20,6 +20,7 @@ class SignUpNotifier extends ChangeNotifier {
     _processing = newValue;
     notifyListeners();
   }
+  
 
 // triggered when the first time when user login to be prompted to the update profile page
   bool _firstTime = false;
